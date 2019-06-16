@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水平垂直都居中</title>
+    <style>
+        .parent1{
+            width: 200px;
+            height: 200px;
+            background-color:greenyellow;
+            text-align: center;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .child1{
+            background-color: aqua;
+            display: inline-block;
+        }
+        .parent2{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            position: relative;
+        }
+        .child2{
+            background-color: aqua;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .parent3{
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .child3{
+            background-color: aqua;
+       }
+    </style>
+</head>
+<body>
+    <div class="parent1">
+        <div class="child1">
+            DEMO
+        </div>
+    </div>
+    <br>
+    <div class="parent2">
+        <div class="child2">
+            DEMO
+        </div>
+    </div>
+    <br>
+    <div class="parent3">
+        <div class="child3">
+            DEMO
+        </div>
+    </div>
+</body>
+</html>

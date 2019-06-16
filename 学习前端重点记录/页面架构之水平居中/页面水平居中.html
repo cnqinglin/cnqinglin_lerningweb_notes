@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面水平剧中</title>
+    <style>
+        /*第一种情况：开始*/
+        .child1{
+            border: 2px solid green;
+            background: gray;
+            display: inline-block;
+        }
+        .parent1{
+            padding: 30px;
+            width: 300  px;
+            height: 200px;
+            background: gray;
+            text-align: center;
+        }
+        /*第一种情况：结束*/
+        /*第二种情况：开始*/
+        .child2{
+            border: 2px solid green;
+            background: gray;
+            display: table;
+            margin: 20px auto;
+        }
+        .parent2{
+            padding: 20px;
+            width: 300 px;
+            height: 200px;
+            background: gray;
+            text-align: center;
+        }
+        /*第二种情况：结束*/
+        /*第三种情况：开始*/
+        .parent3{
+            padding: 20px;
+            width: 300 px;
+            height: 200px;
+            background: gray;
+            position: relative;
+        }
+        .child3{
+            margin: 20px auto;
+            border: 2px solid green;
+            background: gray;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        /*第三种情况：结束*/
+        /*第四种情况：开始*/
+        .parent4{
+            padding: 20px;
+            width: 300 px;
+            height: 200px;
+            background: gray;
+            display: flex;
+            justify-content: center;
+        }
+        .child4{
+            border: 2px solid green;
+            background: gray;
+        }
+        /*第四种情况：结束*/
+    </style>
+</head>
+<body>
+    <!--inline-block属性IE8以上才支持-->>
+    <div class="parent1">
+        <div class="child1">
+                第一：<br/>
+                这样情况下格式：<br/>
+                子级元素：display:inline-block;(display:inline-block下：盒子高宽以内容为定)<br/>
+                父级元素：text-align:center<br/>
+                就可以了！
+        </div>
+    </div>
+    <br/>
+    <!---table属性IE8一下都支持-->>
+    <div class="parent2">
+        <div class='child2'>
+                第二:
+                这样情况下格式：<br/>
+                子级元素：display:table下：(盒子高宽以内容为定)<br/>
+                父级元素：不用管;直接给子级元素给margin:auto就行<br/>
+                就可以了！
+        </div>
+    </div>
+    <br>
+    <div class="parent3">
+        <div class="child3">
+            第三：
+            这样情况下格式:<br/>
+            给绝对定位：absolute元素的宽度也是由内容定；<br>
+            父级元素：给绝对定位；<br>
+            子级元素：根据父级元素给相对定位，根据自身给相对定位<br>
+            就可以了！
+        </div>
+    </div>
+    <br>
+    <div class="parent4">
+        <div class="child4">
+            第四：
+            这样的情况下：<br/>
+            只需给父级元素就行了
+            （display：flex;
+            justify-content：center;)
+            或者：<br/>
+            父级元素：display：flex;<br/>  
+            子级元素：margin:0 auto就行;
+        </div>
+    </div>
+</body>
+</html>
